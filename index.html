@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type = "text/JavaScript" src ="https://MomentJS.com/downloads/moment.js"></script>
     <title>Document</title>
 </head>
 <body>
     
+    <div id = "date">
+    <script type = "text/JavaScript">
+        let datum = moment('2022.11.16').add({M:6}).format('YYYY.MM.DD');
+        document.getElementById('date').innerHTML = datum;
+    </script>
+    </div>
 
     <script src="app.js"></script>
-    <script type = "text/JavaScript" src ="https://MomentJS.com/downloads/moment.js"></script>
 </body>
 </html>
