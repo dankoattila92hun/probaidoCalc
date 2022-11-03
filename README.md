@@ -1,0 +1,2 @@
+# probaidoCalc
+Próbaidő kalkulátor program
