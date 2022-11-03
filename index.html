@@ -17,7 +17,7 @@
     min="1900-01-01" max="9999-12-31">
     </div>
     <div>
-        inpu
+        <input type="number" name="probaido" id="probaido" min="1" max="6">
     </div>
     </div>
 
@@ -26,8 +26,8 @@
     <div id = "date"></div>
     <script type = "text/JavaScript">
         function probaidoCalc() {
-            let datum = moment((document.getElementById('startDate')).value).add({M:3}).format('YYYY.MM.DD');
-            let probaidoEnd = moment(datum).subtract(1, 'days');
+            let datum = moment((document.getElementById('startDate')).value).add(document.getElementById('probaido').value, 'months').format('YYYY.MM.DD');
+            let probaidoEnd = moment(datum).subtract(1, 'days').format('YYYY.MM.DD');
         document.getElementById('date').innerHTML = probaidoEnd;
         }
     </script>
