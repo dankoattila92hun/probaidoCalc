@@ -9,7 +9,16 @@
 </head>
 <body>
     
-    <div id = "date">
+    <div>
+        <label for="start">Kezdő dátum:</label>
+    <div>
+        <input type="date" id="startDate" name="trip-start"
+    value="2018-07-22"
+    min="1900-01-01" max="9999-12-31">
+    </div>
+    </div>
+        
+    <div id = "date"></div>
     <script type = "text/JavaScript">
         let datum = moment('2022.11.16').add({M:6}).format('YYYY.MM.DD');
         document.getElementById('date').innerHTML = datum;
