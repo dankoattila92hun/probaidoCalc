@@ -13,15 +13,23 @@
         <label for="start">Kezdő dátum:</label>
     <div>
         <input type="date" id="startDate" name="trip-start"
-    value="2018-07-22"
+    value="2022.01.01"
     min="1900-01-01" max="9999-12-31">
     </div>
+    <div>
+        inpu
     </div>
+    </div>
+
+    <button onclick="probaidoCalc()">Számol</button>
         
     <div id = "date"></div>
     <script type = "text/JavaScript">
-        let datum = moment('2022.11.16').add({M:6}).format('YYYY.MM.DD');
-        document.getElementById('date').innerHTML = datum;
+        function probaidoCalc() {
+            let datum = moment((document.getElementById('startDate')).value).add({M:3}).format('YYYY.MM.DD');
+            let probaidoEnd = moment(datum).subtract(1, 'days');
+        document.getElementById('date').innerHTML = probaidoEnd;
+        }
     </script>
     </div>
 
