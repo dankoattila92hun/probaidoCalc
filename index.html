@@ -10,20 +10,25 @@
 <body>
     
     <div>
-        <label for="start">Kezdő dátum:</label>
+        <label for="kezdesdatum">Munkaviszony kezdetének dátuma:</label>
     <div>
-        <input type="date" id="startDate" name="trip-start"
-    value="2022.01.01"
-    min="1900-01-01" max="9999-12-31">
+        <input type="date" id="startDate" name="kezdesdatum" value="2022.01.01" min="1900-01-01" max="9999-12-31">
     </div>
+        <label for="probaido">Próbaidő mértéke (hónap):</label>
     <div>
         <input type="number" name="probaido" id="probaido" min="1" max="6">
     </div>
     </div>
 
-    <button onclick="probaidoCalc()">Számol</button>
-        
-    <div id = "date"></div>
+    <div>
+        <button onclick="probaidoCalc()">Számol</button>
+    </div>
+
+    <div>
+        <label for="probaidoEnd">Próbaidő utolsó napja:</label> 
+    </div>
+    
+    <div id = "date">
     <script type = "text/JavaScript">
         function probaidoCalc() {
             let datum = moment((document.getElementById('startDate')).value).add(document.getElementById('probaido').value, 'months').format('YYYY.MM.DD');
