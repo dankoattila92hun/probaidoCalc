@@ -39,7 +39,7 @@
     <div id = "date">
     <script type = "text/JavaScript">
         function probaidoCalc() {
-            let datum = moment((document.getElementById('kezdesdatum')).value).add(document.getElementById('probaido').value, 'months').format('YYYY-MM-DD');
+            let datum = moment((document.getElementById('kezdesdatum')).value).add(document.getElementById('probaido').value, 'days').format('YYYY-MM-DD');
             let probaidoEnd = moment(datum).subtract(1, 'days').format('YYYY-MM-DD');
         document.getElementById('date').innerHTML = probaidoEnd;
         }
