@@ -47,7 +47,7 @@
         <div>
             <label for="probaidoEnd">Próbaidő utolsó napja:</label>
         </div>
-        
+
         <div id="date">
             <script type="text/JavaScript">
 
@@ -66,9 +66,10 @@
                     probaidoEnd = "Kérem, először válassza ki a próbaidő alapegységét!";
                     }; 
                 
-                    moment(probaidoEnd).subtract(1, 'days').format('YYYY-MM-DD');
+                    probaidoEnd = moment(probaidoEnd).subtract(1, 'days').format('YYYY-MM-DD');
                     document.getElementById('date').innerHTML = probaidoEnd;
                 }
+
             </script>
         </div>
     </div>
