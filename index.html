@@ -13,43 +13,46 @@
 
 <body>
 
-    <!--Kezdő dátum mező-->
-    <div class="form-group" id="probaidoCalcfForm">
-        <div class="form-group">
-            <label for="kezdesdatum">Munkaviszony kezdetének dátuma:</label>
-            <div>
-                <input type="date" id="kezdesdatum" name="kezdesdatum" value="2022-01-01" min="1900-01-01"
-                    max="9999-12-31">
-            </div>
-        </div>
-        <!--Próbaidő egysége mező-->
+    <div class="container text-center">
+        <div class="col-md-12">
+            <h1 class="display-1">Próbaidő kalkulátor</h1>
+            <!--Kezdő dátum mező-->
+            <div class="form-group" id="probaidoCalcfForm">
+                <div class="form-group">
+                    <label for="kezdesdatum">Munkaviszony kezdetének dátuma:</label>
+                    <div>
+                        <input type="date" id="kezdesdatum" name="kezdesdatum" value="2022-01-01" min="1900-01-01"
+                            max="9999-12-31">
+                    </div>
+                </div>
+                <!--Próbaidő egysége mező-->
 
-        <div class="form-group form-floating">
-            <select class="form-select" name="probaidoEgyseg" id="probaidoEgyseg">
-                <option value="" selected>Válassza ki a próbaidő alapegységét!</option>
-            </select>
-            <label for="probaidoEgyseg">Próbaidő alapegysége</label>
-        </div>
+                <div class="form-group form-floating">
+                    <select class="form-select" name="probaidoEgyseg" id="probaidoEgyseg">
+                        <option value="" selected>Válassza ki a próbaidő alapegységét!</option>
+                    </select>
+                    <label for="probaidoEgyseg">Próbaidő alapegysége</label>
+                </div>
 
-        <!--Próbaidő tartama mezők feltételes előfordulással-->
-        <div class="form-group form-floating">
-            <select class="form-select" name="probaidoTartam" id="probaidoTartam">
-                <option value="" selected>Kérem, először válassza ki a próbaidő alapegységét!</option>
-            </select>
-            <label for="probaidoTartam">Próbaidő tartama</label>
-        </div>
+                <!--Próbaidő tartama mezők feltételes előfordulással-->
+                <div class="form-group form-floating">
+                    <select class="form-select" name="probaidoTartam" id="probaidoTartam">
+                        <option value="" selected>Kérem, először válassza ki a próbaidő alapegységét!</option>
+                    </select>
+                    <label for="probaidoTartam">Próbaidő tartama</label>
+                </div>
 
-        <!--Számítás és eredmény kiíratás-->
-        <div>
-            <button onclick="probaidoCalc()">Számol</button>
-        </div>
+                <!--Számítás és eredmény kiíratás-->
+                <div>
+                    <button onclick="probaidoCalc()">Számol</button>
+                </div>
 
-        <div>
-            <label for="probaidoEnd">Próbaidő utolsó napja:</label>
-        </div>
+                <div>
+                    <label for="probaidoEnd">Próbaidő utolsó napja:</label>
+                </div>
 
-        <div id="date">
-            <script type="text/JavaScript">
+                <div id="date">
+                    <script type="text/JavaScript">
 
                 function probaidoCalc() {
                     let probaidoEnd;
@@ -71,6 +74,8 @@
                 }
 
             </script>
+                </div>
+            </div>
         </div>
     </div>
 
