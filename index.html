@@ -32,8 +32,6 @@
         </div>
 
         <!--Próbaidő tartama mezők feltételes előfordulással-->
-         <!--    <input type="number" id="probaidoTartam" class="form-control" name="probaidoTartam"/>
-            <label class="form-label" for="probaidoTartam">Próbaidő tartama</label>-->
         <div class="form-group form-floating">
             <select class="form-select" name="probaidoTartam" id="probaidoTartam">
                 <option value="" selected>Kérem, először válassza ki a próbaidő alapegységét!</option>
@@ -51,13 +49,14 @@
         </div>
     </div>
 
-    <script>
+    <div id="date">
+        <script type="text/JavaScript">
 
         let probaidoObject = {
-            "probaido": {
-                "Nap": [],
-                "Hét": [],
-                "Hónap": []
+            probaido: {
+                Nap: [],
+                Hét: [],
+                Hónap: []
             }
         };
 
@@ -73,11 +72,15 @@
             probaidoObject.probaido.Hónap.push(i);
         };
         
+        let probaidoNap = Object.keys(probaidoObject.probaido)[0];
+        let probaidoHet = Object.keys(probaidoObject.probaido)[1];
+        let probaidoHonap = Object.keys(probaidoObject.probaido)[2];
+
+        let probaidoEgysegSel = document.getElementById("probaidoEgyseg");
+        let probaidoTartamSel = document.getElementById("probaidoTartam");
 
         window.onload = function () {
-            let probaidoEgysegSel = document.getElementById("probaidoEgyseg");
-            let probaidoTartamSel = document.getElementById("probaidoTartam");
-            
+
             for (let x in probaidoObject.probaido) {
                 probaidoEgysegSel.options[probaidoEgysegSel.options.length] = new Option(x, x);
             }
@@ -92,14 +95,25 @@
         }
         }
 
-    </script>
-
-    <div id="date">
-        <script type="text/JavaScript">
         function probaidoCalc() {
-        let datum = moment((document.getElementById('kezdesdatum')).value).add(document.getElementById('probaidoTartam').value, 'months').format('YYYY-MM-DD');
-        let probaidoEnd = moment(datum).subtract(1, 'days').format('YYYY-MM-DD');  
-        document.getElementById('date').innerHTML = probaidoEnd;}
+            let probaidoEnd;
+            let probaidoEgyseg = document.getElementById("probaidoEgyseg").value;
+            let datum = moment((document.getElementById('kezdesdatum')).value);
+        
+                
+                if (probaidoEgyseg == probaidoHonap) {
+                probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'months').format('YYYY-MM-DD');
+                } else if (probaidoEgyseg == probaidoHet) {
+                probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'weeks').format('YYYY-MM-DD');
+                } else if (probaidoEgyseg == probaidoNap) {
+                probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'days').format('YYYY-MM-DD');
+                } else {
+                    probaidoEnd = "Kérem, először válassza ki a próbaidő alapegységét!";
+                }; 
+
+            moment(datum).subtract(1, 'days').format('YYYY-MM-DD');
+            document.getElementById('date').innerHTML = probaidoEnd;}
+
         </script>
     </div>
 
