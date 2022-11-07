@@ -1,0 +1,22 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+   
+    
+}
+
+body {
+    background-color: #FFECD1;
+}
+
+#cim {
+    padding: 1rem;
+    background-color: #1D3557;
+    color: #FBFEFB;
+    border: 2px solid #FCA311;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
