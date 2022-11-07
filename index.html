@@ -13,67 +13,72 @@
 
 <body>
 
-    <div class="container text-center">
+    <div class="container text-center"
+        style="width: 30rem; display:flex; flex-direction: column; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center;">
         <div class="col-md-12">
             <h1 class="display-1">Próbaidő kalkulátor</h1>
             <!--Kezdő dátum mező-->
-            <div class="form-group" id="probaidoCalcfForm">
-                <div class="form-group">
-                    <label for="kezdesdatum">Munkaviszony kezdetének dátuma:</label>
-                    <div>
-                        <input type="date" id="kezdesdatum" name="kezdesdatum" value="2022-01-01" min="1900-01-01"
-                            max="9999-12-31">
-                    </div>
-                </div>
-                <!--Próbaidő egysége mező-->
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group" id="probaidoCalcfForm">
+                        <div class="form-group">
+                            <label for="kezdesdatum">Munkaviszony kezdetének dátuma:</label>
+                            <div>
+                                <input type="date" id="kezdesdatum" name="kezdesdatum" value="2022-01-01"
+                                    min="1900-01-01" max="9999-12-31">
+                            </div>
+                        </div>
+                        <!--Próbaidő egysége mező-->
 
-                <div class="form-group form-floating">
-                    <select class="form-select" name="probaidoEgyseg" id="probaidoEgyseg">
-                        <option value="" selected>Válassza ki a próbaidő alapegységét!</option>
-                    </select>
-                    <label for="probaidoEgyseg">Próbaidő alapegysége</label>
-                </div>
+                        <div class="form-group form-floating">
+                            <select class="form-select" name="probaidoEgyseg" id="probaidoEgyseg">
+                                <option value="" selected>Válassza ki a próbaidő alapegységét!</option>
+                            </select>
+                            <label for="probaidoEgyseg">Próbaidő alapegysége</label>
+                        </div>
 
-                <!--Próbaidő tartama mezők feltételes előfordulással-->
-                <div class="form-group form-floating">
-                    <select class="form-select" name="probaidoTartam" id="probaidoTartam">
-                        <option value="" selected>Kérem, először válassza ki a próbaidő alapegységét!</option>
-                    </select>
-                    <label for="probaidoTartam">Próbaidő tartama</label>
-                </div>
+                        <!--Próbaidő tartama mezők feltételes előfordulással-->
+                        <div class="form-group form-floating">
+                            <select class="form-select" name="probaidoTartam" id="probaidoTartam">
+                                <option value="" selected>Kérem, először válassza ki a próbaidő alapegységét!</option>
+                            </select>
+                            <label for="probaidoTartam">Próbaidő tartama</label>
+                        </div>
 
-                <!--Számítás és eredmény kiíratás-->
-                <div>
-                    <button onclick="probaidoCalc()">Számol</button>
-                </div>
+                        <!--Számítás és eredmény kiíratás-->
+                        <div>
+                            <button onclick="probaidoCalc()">Számol</button>
+                        </div>
 
-                <div>
-                    <label for="probaidoEnd">Próbaidő utolsó napja:</label>
-                </div>
+                        <div>
+                            <label for="probaidoEnd">Próbaidő utolsó napja:</label>
+                        </div>
 
-                <div id="date">
-                    <script type="text/JavaScript">
+                        <div id="date">
+                            <script type="text/JavaScript">
 
-                function probaidoCalc() {
-                    let probaidoEnd;
-                    let probaidoEgyseg = document.getElementById("probaidoEgyseg").value;
-                    let datum = moment((document.getElementById('kezdesdatum')).value);
+                                function probaidoCalc() {
+                                    let probaidoEnd;
+                                    let probaidoEgyseg = document.getElementById("probaidoEgyseg").value;
+                                    let datum = moment((document.getElementById('kezdesdatum')).value);
         
-                    if (probaidoEgyseg == probaidoHonap) {
-                    probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'months').format('YYYY-MM-DD');
-                    } else if (probaidoEgyseg == probaidoHet) {
-                    probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'weeks').format('YYYY-MM-DD');
-                    } else if (probaidoEgyseg == probaidoNap) {
-                    probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'days').format('YYYY-MM-DD');
-                    } else {
-                    probaidoEnd = "Kérem, először válassza ki a próbaidő alapegységét!";
-                    }; 
+                                    if (probaidoEgyseg == probaidoHonap) {
+                                    probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'months').format('YYYY-MM-DD');
+                                    } else if (probaidoEgyseg == probaidoHet) {
+                                    probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'weeks').format('YYYY-MM-DD');
+                                    } else if (probaidoEgyseg == probaidoNap) {
+                                    probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'days').format('YYYY-MM-DD');
+                                    } else {
+                                    probaidoEnd = "Kérem, először válassza ki a próbaidő alapegységét!";
+                                    }; 
                 
-                    probaidoEnd = moment(probaidoEnd).subtract(1, 'days').format('YYYY-MM-DD');
-                    document.getElementById('date').innerHTML = probaidoEnd;
-                }
+                                    probaidoEnd = moment(probaidoEnd).subtract(1, 'days').format('YYYY-MM-DD');
+                                    document.getElementById('date').innerHTML = probaidoEnd;
+                                ;}
 
-            </script>
+                            </script>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
