@@ -42,9 +42,10 @@
                             style="text-transform: uppercase; color: #888; letter-spacing: 1px; font-weight: 650; font-size: 1.5em; display: block; margin-block-start: 0.3rem; margin-block-end: 0.3rem; margin-inline-start: 0px; margin-inline-end: 0px;">
                             2012. évi I. törvény [Mt.(új)]</li>
                             <br>
-                            <p style="text-transform: uppercase; color: #888; letter-spacing: 1px; font-weight: 550; font-size: 18px; display: block; margin-block-start: 0.3rem; margin-block-end: 0.3rem; margin-inline-start: 0px; margin-inline-end: 0px;">
-                                25. A munkaszerződés tartalma 
-                            </p>
+                        <p
+                            style="text-transform: uppercase; color: #888; letter-spacing: 1px; font-weight: 550; font-size: 18px; display: block; margin-block-start: 0.3rem; margin-block-end: 0.3rem; margin-inline-start: 0px; margin-inline-end: 0px;">
+                            25. A munkaszerződés tartalma
+                        </p>
                         </p>
 
                         <div class="content">
@@ -76,24 +77,33 @@
                     <div class="card p-2 gy-2 py-3" id="card">
                         <div class="card-body">
                             <div class="form-group py-2" id="probaidoCalcfForm">
-                                
-                                    <label for="kezdesdatum" id="labelDate">Munkaviszony kezdetének dátuma:</label>
-                                    <div class="form-group p-3">
-                                        <input type="date" id="kezdesdatum" name="kezdesdatum" value="2022-01-01"
-                                            min="1900-01-01" max="9999-12-31">
-                                    </div>
-                                
+
+                                <label for="kezdesdatum" id="labelDate">Munkaviszony kezdetének dátuma:</label>
+                                <div class="form-group p-3">
+                                    <input type="date" id="kezdesdatum" name="kezdesdatum" value="" min="1900-01-01"
+                                        max="9999-12-31" autocomplete="button">
+                                </div>
+
                                 <!--Próbaidő egysége mező-->
+
 
                                 <div class="row align-items-center justify-content-between g-4 ">
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group p-2 p-sm-3">
                                             <div class="form-group form-floating">
                                                 <select class="form-select" name="probaidoEgyseg" id="probaidoEgyseg">
-                                                    <option value="" selected>Válassza ki a próbaidő alapegységét!
-                                                    </option>
+                                                    <button class="btn dropdown-toggle dropdown-toggle-split"
+                                                        data-bs-reference="parent" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                                        autocomplete="button">
+                                                        <option value="" selected style="text-align: center;">Kérem,
+                                                            először válassza ki a próbaidő
+                                                            alapegységét!
+                                                        </option>
+                                                    </button>
                                                 </select>
-                                                <label for="probaidoEgyseg">Próbaidő alapegysége</label>
+                                                <label for="probaidoEgyseg" style="text-align: center;">Próbaidő
+                                                    alapegysége</label>
                                             </div>
                                         </div>
                                     </div>
@@ -104,31 +114,40 @@
                                         <div class="form-group p-2 p-sm-3">
                                             <div class="form-group form-floating">
                                                 <select class="form-select" name="probaidoTartam" id="probaidoTartam">
-                                                    <option value="" selected>Kérem, először válassza ki a próbaidő
-                                                        alapegységét!
-                                                    </option>
+                                                    <button class="btn dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false" id="toggle"
+                                                        autocomplete="button">
+                                                        <option value="">Kérem, először válassza ki a próbaidő
+                                                            alapegységét!
+                                                        </option>
+                                                    </button>
                                                 </select>
-                                                <label for="probaidoTartam">Próbaidő tartama</label>
+                                                <label for="probaidoTartam" style="text-align: center;">Próbaidő
+                                                    tartama</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
+
                                 <!--Számítás és eredmény kiíratás-->
 
                                 <div class="d-grid gap-2 col-6 mx-auto p-4 p-sm-3">
-                                    <button type="submit" class="btn btn-outline-primary"
-                                        onclick="probaidoCalc()">Számol</button>
+                                    <div class="row">
+                                        <button type="submit" id="butCalc" class="btn btn-outline-primary"
+                                            onclick="probaidoCalc()">Számol</button>
+                                    </div>
                                 </div>
 
                                 <div class="d-grid col-6 mx-auto p-4 p-sm-3">
-                                    <label for="probaidoEnd">Próbaidő utolsó napja:</label>
+                                    <label for="probaidoEnd" id="labelDate">Próbaidő utolsó napja:</label>
                                 </div>
 
-                                <div id="date">
-                                    <script type="text/JavaScript">
+                                <div class="container d-flex flex-column align-items-center text-center justify-content-center">
+                                    <div id="date">
+                                        <script type="text/JavaScript">
                                     function probaidoCalc() {
-                                        let probaidoEnd;
+                                        let probaidoEnd = "";
                                         let probaidoEgyseg = document.getElementById("probaidoEgyseg").value;
                                         let datum = moment((document.getElementById('kezdesdatum')).value);
         
@@ -145,8 +164,10 @@
                                         probaidoEnd = "Kérem, először válassza ki a próbaidő alapegységét!";
                                         }; 
                                         document.getElementById('date').innerHTML = probaidoEnd;
+
                                     };
                                 </script>
+                                    </div>
                                 </div>
                             </div>
                         </div>

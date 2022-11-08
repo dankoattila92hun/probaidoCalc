@@ -51,10 +51,17 @@ body {
 input[type='date'] {
     font-size: 16px;
     line-height: 1.5;
-    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
     border: 2px solid #1D3557;
-    background-color: #EDEDE9;
-    border-radius: 5px;
+    background-color: #FBFEFB;
+    border-radius: 30px;
+}
+
+input[type='date']:hover {
+    background-color: #BAF2BB;
 }
 
 ::-webkit-calendar-picker-indicator{
@@ -62,5 +69,57 @@ input[type='date'] {
     border-radius: 3px;
     padding: 5px;
     cursor: pointer;
+}
+
+#probaidoEgyseg{
+    border-radius: 30px;
+    background-color: #FBFEFB;
+    border: 2px solid #1D3557;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+#probaidoEgyseg:hover{
+    background-color: #BAF2BB;
+}
+
+#probaidoTartam{
+    border-radius: 30px;
+    background-color: #FBFEFB;
+    border: 2px solid #1D3557;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+#probaidoTartam:hover{
+    background-color: #BAF2BB;
+}
+
+#butCalc {
+    background-color: #FBFEFB;
+    border: 2px solid #1D3557;
+    border-radius: 30px;
+    font-weight: 600;
+    color: black;
+    text-transform: uppercase;
+}
+
+#butCalc:hover {
+    background-color: #BAF2BB;
+}
+
+#date {
+    border: 3px solid #1D3557;
+    border-radius: 5px;
+    width: 20%;
+    min-height: 30px;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-weight: 600;
+    background-color: #FBFEFB;
 }
 

@@ -37,3 +37,8 @@ window.onload = function () {
           }
 };
 
+let eredmeny = document.getElementById("date");
+
+if (eredmeny != "") {
+    eredmeny.style.backgroundColor = "#BAF2BB";
+};
