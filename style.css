@@ -1,8 +1,8 @@
 html {
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
-   
-    
+
+
 }
 
 body {
@@ -20,6 +20,19 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.image{
-    max-width: 100%;
+#image {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 25px;
 }
+
+.content {
+    
+}
+
+#formDate {}
+
+#labelDate {}
+
+#kezdesdatum {}
