@@ -20,3 +20,6 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+.image{
+    max-width: 100%;
+}
