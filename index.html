@@ -32,79 +32,82 @@
             <div class="col gy-4 px-2">
                 <div class="card p-2 gy-2 py-3">
                     <div class="card-body p-3">
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa porro sed nulla. Quisquam
-                                tenetur
-                                architecto eaque. Ipsum, optio repudiandae. Ratione fugit perspiciatis nemo repellendus
-                                vitae!
-                                Quaerat saepe quibusdam totam cupiditate!
-                            </li>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, reprehenderit tempora
-                                vero
-                                sunt
-                                culpa numquam porro! Quidem sapiente consectetur, hic enim earum necessitatibus ea neque
-                                expedita aliquid accusamus laborum aperiam.</li>
-                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa quia id aliquid esse
-                                eveniet
-                                molestias quam ad iste tempore, assumenda, voluptatibus sit sunt voluptates nihil minima
-                                numquam
-                                libero, tenetur explicabo?</li>
-                        </ul>
+                        <p class="image">
+                            <img src="img/protected.png" alt="law">
+                        </p>
+                        <p>
+                            2012. évi I. törvény [Mt.(új)]</li><br>25. A munkaszerződés tartalma
+                        </p>
+                        <p> 45. § (5) A felek a munkaszerződésben a munkaviszony kezdetétől számított legfeljebb három
+                            hónapig terjedő próbaidőt köthetnek ki.
+                            Ennél rövidebb próbaidő kikötése esetén a felek a próbaidőt - legfeljebb egy alkalommal -
+                            meghosszabbíthatják.
+                            A próbaidő tartama a meghosszabbítása esetén sem haladhatja meg a három hónapot.</p>
+                        <p>
+                            50. § (4) Kollektív szerződés rendelkezése alapján a próbaidő tartama legfeljebb hat hónap.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row px-3 align-items-md-stretch align-items-center gy-1 gx-3">
-            <div class="col gy-4 px-2">
-                <!--Kezdő dátum mező-->
-                <div class="card p-2 gy-2 py-3" id="card">
-                    <div class="card-body">
-                        <div class="form-group" id="probaidoCalcfForm">
-                            <div class="form-group">
-                                <label for="kezdesdatum">Munkaviszony kezdetének dátuma:</label>
+        <div
+            class="container-md d-flex flex-column p-2 text-center justify-content-center align-items-md-stretch align-items-center">
+            <div class="row px-3 align-items-md-stretch align-items-center gy-1 gx-3">
+                <div class="col gy-4 px-2">
+                    <!--Kezdő dátum mező-->
+                    <div class="card p-2 gy-2 py-3" id="card">
+                        <div class="card-body">
+                            <div class="form-group" id="probaidoCalcfForm">
+                                <div class="form-group py-2">
+                                    <label for="kezdesdatum">Munkaviszony kezdetének dátuma:</label>
+                                    <div class="form-group p-3">
+                                        <input type="date" id="kezdesdatum" name="kezdesdatum" value="2022-01-01"
+                                            min="1900-01-01" max="9999-12-31">
+                                    </div>
+                                </div>
+
+                                <!--Próbaidő egysége mező-->
+
+                                <div class="row align-items-center justify-content-between g-4 ">
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="form-group p-2 p-sm-3">
+                                            <div class="form-group form-floating">
+                                                <select class="form-select" name="probaidoEgyseg" id="probaidoEgyseg">
+                                                    <option value="" selected>Válassza ki a próbaidő alapegységét!
+                                                    </option>
+                                                </select>
+                                                <label for="probaidoEgyseg">Próbaidő alapegysége</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Próbaidő tartama mezők feltételes előfordulással-->
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="form-group p-2 p-sm-3">
+                                            <div class="form-group form-floating">
+                                                <select class="form-select" name="probaidoTartam" id="probaidoTartam">
+                                                    <option value="" selected>Kérem, először válassza ki a próbaidő
+                                                        alapegységét!
+                                                    </option>
+                                                </select>
+                                                <label for="probaidoTartam">Próbaidő tartama</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Számítás és eredmény kiíratás-->
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <button type="submit" class="btn btn-outline-primary"
+                                        onclick="probaidoCalc()">Számol</button>
+                                </div>
+
                                 <div>
-                                    <input type="date" id="kezdesdatum" name="kezdesdatum" value="2022-01-01"
-                                        min="1900-01-01" max="9999-12-31">
-                                </div>
-                            </div>
-
-                            <!--Próbaidő egysége mező-->
-
-                            <div class="row align-items-center justify-content-between g-4 ">
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="form-group form-floating">
-                                        <select class="form-select" name="probaidoEgyseg" id="probaidoEgyseg">
-                                            <option value="" selected>Válassza ki a próbaidő alapegységét!</option>
-                                        </select>
-                                        <label for="probaidoEgyseg">Próbaidő alapegysége</label>
-                                    </div>
+                                    <label for="probaidoEnd">Próbaidő utolsó napja:</label>
                                 </div>
 
-                                <!--Próbaidő tartama mezők feltételes előfordulással-->
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="form-group form-floating">
-                                        <select class="form-select" name="probaidoTartam" id="probaidoTartam">
-                                            <option value="" selected>Kérem, először válassza ki a próbaidő
-                                                alapegységét!
-                                            </option>
-                                        </select>
-                                        <label for="probaidoTartam">Próbaidő tartama</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Számítás és eredmény kiíratás-->
-                            <div class="d-grid gap-2 col-6 mx-auto">
-                                <button type="submit" class="btn btn-outline-primary"
-                                    onclick="probaidoCalc()">Számol</button>
-                            </div>
-
-                            <div>
-                                <label for="probaidoEnd">Próbaidő utolsó napja:</label>
-                            </div>
-
-                            <div id="date">
-                                <script type="text/JavaScript">
+                                <div id="date">
+                                    <script type="text/JavaScript">
                                     function probaidoCalc() {
                                         let probaidoEnd;
                                         let probaidoEgyseg = document.getElementById("probaidoEgyseg").value;
@@ -125,6 +128,7 @@
                                         document.getElementById('date').innerHTML = probaidoEnd;
                                     };
                                 </script>
+                                </div>
                             </div>
                         </div>
                     </div>
