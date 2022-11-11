@@ -132,41 +132,44 @@
 
                                 <!--Számítás és eredmény kiíratás-->
 
-                                <div class="d-grid gap-2 col-6 mx-auto p-4 p-sm-3">
-                                    <div class="row">
+                                <div class="d-grid gap-2 col-6 mx-auto p-4 p-sm-3 align-content-center">
+                                    <div class="row align-content-center">
                                         <button type="submit" id="butCalc" class="btn btn-outline-primary"
                                             onclick="probaidoCalc()">Számol</button>
                                     </div>
                                 </div>
 
-                                <div class="d-grid col-6 mx-auto p-4 p-sm-3">
+                                <div class="d-grid col-6 mx-auto p-4 p-sm-3 align-content-center">
                                     <label for="probaidoEnd" id="labelDate">Próbaidő utolsó napja:</label>
                                 </div>
 
-                                <div class="container d-flex flex-column align-items-center text-center justify-content-center">
-                                    <div id="date">
-                                        <script type="text/JavaScript">
-                                    function probaidoCalc() {
-                                        let probaidoEnd = "";
-                                        let probaidoEgyseg = document.getElementById("probaidoEgyseg").value;
-                                        let datum = moment((document.getElementById('kezdesdatum')).value);
+                                <div
+                                    class="container-md d-flex flex-column p-2 text-center justify-content-center align-content-center">
+                                    <div class="row px-3 align-items-md-stretch align-items-center gy-1 gx-3">
+                                        <div class="col gy-4 px-2" id="date">
+                                            <script type="text/JavaScript">
+                                            function probaidoCalc() {
+                                            let probaidoEnd = "";
+                                            let probaidoEgyseg = document.getElementById("probaidoEgyseg").value;
+                                            let datum = moment((document.getElementById('kezdesdatum')).value);
         
-                                        if (probaidoEgyseg == probaidoHonap) {
-                                        probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'months').format('YYYY-MM-DD');
-                                        probaidoEnd = moment(probaidoEnd).subtract(1, 'days').format('YYYY-MM-DD');
-                                        } else if (probaidoEgyseg == probaidoHet) {
-                                        probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'weeks').format('YYYY-MM-DD');
-                                        probaidoEnd = moment(probaidoEnd).subtract(2, 'days').format('YYYY-MM-DD');
-                                        } else if (probaidoEgyseg == probaidoNap) {
-                                        probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'days').format('YYYY-MM-DD');
-                                        probaidoEnd = moment(probaidoEnd).subtract(2, 'days').format('YYYY-MM-DD');
-                                        } else {
-                                        probaidoEnd = "Kérem, először válassza ki a próbaidő alapegységét!";
-                                        }; 
-                                        document.getElementById('date').innerHTML = probaidoEnd;
+                                            if (probaidoEgyseg == probaidoHonap) {
+                                            probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'months').format('YYYY-MM-DD');
+                                            probaidoEnd = moment(probaidoEnd).subtract(1, 'days').format('YYYY-MM-DD');
+                                            } else if (probaidoEgyseg == probaidoHet) {
+                                            probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'weeks').format('YYYY-MM-DD');
+                                            probaidoEnd = moment(probaidoEnd).subtract(2, 'days').format('YYYY-MM-DD');
+                                            } else if (probaidoEgyseg == probaidoNap) {
+                                            probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'days').format('YYYY-MM-DD');
+                                            probaidoEnd = moment(probaidoEnd).subtract(2, 'days').format('YYYY-MM-DD');
+                                            } else {
+                                            probaidoEnd = "Kérem, először válassza ki a próbaidő alapegységét!";
+                                            }; 
+                                            document.getElementById('date').innerHTML = probaidoEnd;
 
-                                    };
-                                </script>
+                                            };
+                                            </script>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -111,15 +111,11 @@ input[type='date']:hover {
 #date {
     border: 3px solid #1D3557;
     border-radius: 5px;
-    width: 20%;
+    min-width: 20%;
     min-height: 30px;
     height: 100%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
     font-weight: 600;
     background-color: #FBFEFB;
+    flex-basis: auto;
 }
 
