@@ -158,10 +158,10 @@
                                             probaidoEnd = moment(probaidoEnd).subtract(1, 'days').format('YYYY-MM-DD');
                                             } else if (probaidoEgyseg == probaidoHet) {
                                             probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'weeks').format('YYYY-MM-DD');
-                                            probaidoEnd = moment(probaidoEnd).subtract(2, 'days').format('YYYY-MM-DD');
+                                            probaidoEnd = moment(probaidoEnd).subtract(1, 'days').format('YYYY-MM-DD');
                                             } else if (probaidoEgyseg == probaidoNap) {
                                             probaidoEnd = datum.add(document.getElementById('probaidoTartam').value, 'days').format('YYYY-MM-DD');
-                                            probaidoEnd = moment(probaidoEnd).subtract(2, 'days').format('YYYY-MM-DD');
+                                            probaidoEnd = moment(probaidoEnd).subtract(1, 'days').format('YYYY-MM-DD');
                                             } else {
                                             probaidoEnd = "Kérem, először válassza ki a próbaidő alapegységét!";
                                             }; 
